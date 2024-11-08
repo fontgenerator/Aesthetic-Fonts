@@ -1,0 +1,818 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<!-- Primary Meta Tags -->
+<title>Aesthetic Fonts Generator ✨ | #1 Stylish Text & Cool Fonts Copy Tool</title>
+<meta name="title" content="Aesthetic Fonts Generator ✨ | #1 Stylish Text & Cool Fonts Copy Tool"/>
+<meta name="description" content="Discover unique aesthetic fonts with our stylish text generator. Copy & paste cool fonts effortlessly for social media, bios, and more! Elevate your style now."/>
+
+
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    ::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+}
+::-webkit-scrollbar-thumb {
+    background: #ffffff73;
+}
+::-webkit-scrollbar-track {
+    background: #f9f9f9;
+}
+ *{
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+     font-family: Arial, Helvetica, sans-serif;
+     scroll-behavior: smooth;
+}
+body {
+    background: #f0f8ff82;
+}
+header {
+    padding: 7px;
+    background: #2BC0E4;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #EAECC6, #2BC0E4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    text-align: center;
+    position: relative;
+}
+ header a {
+     text-decoration: none;
+     color: #fff;
+     font-size: 20px;
+}
+.text-box {
+    z-index: 1;
+    padding: 10px 0 5px 0;
+}
+ textarea.fancytext {
+    display: block;
+    width: 80%;
+    padding-top: 25px;
+    line-height: 1.5;
+    text-align: center;
+    font-size: 17px;
+    outline: none;
+    border: 1px solid #c4c4c4;
+    resize: none;
+    margin: auto;
+}
+ div#result {
+     text-align: center;
+     width: 80%;
+     display: block;
+     margin: auto;
+}
+ .input-text input {
+     width: 100%;
+     padding: 8px 0 15px 15px;
+     font-size: 18px;
+     outline: none;
+     border-radius: 3px;
+     border: none;
+     cursor: pointer;
+}
+ div#result h2 {
+     text-align: left;
+     font-size: 21px;
+     margin: 20px auto;
+     color: #119be4;
+}
+ span.name {
+     position: absolute;
+     bottom: 3px;
+     left: 15px;
+     font-size: 12px;
+     color: #858585;
+     text-transform: capitalize;
+}
+ .input-text {
+     position: relative;
+     border: 1px solid #c4c4c4;
+     margin: 5px 0;
+     padding: 10px 0px;
+     background: #fff;
+}
+.loadmore {
+     width: 350px;
+     border: 1px solid #c4c4c4;
+     font-size: 17px;
+     padding: 10px;
+     background: #2BC0E4;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #EAECC6, #2BC0E4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+     color: #fff;
+     border-radius: 3px;
+     cursor: pointer;
+     margin: 10px auto;
+}
+
+p.copied {
+    position: fixed;
+    right: 0;
+    text-align: center;
+    bottom: 55%;
+    background: indianred;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 4px;
+    z-index: 99999;
+    box-shadow: 0px 0px 8px 0 rgb(180 180 180 / 41%);
+}
+p.copied span {
+    float: left;
+    width: 100%;
+}
+p.copied .text {
+    background: transparent;
+    color: #fff;
+    border: none;
+    width: 100%;
+}
+    /* random */
+    .float{
+        position: fixed;
+    width: 60px;
+    height: 45px;
+    right: 0;
+    font-size: 20px;
+    background-color: #fff;
+    color: black;
+    text-align: center;
+    box-shadow: 0px 2px 8px 3px #dadada;
+    z-index: 9;
+}
+.float:hover {
+    background: #f3f3f3;
+}
+.my-float{
+    margin-top:13px;
+}
+.randoms {
+    position: relative;
+    height: 100px;
+}
+div#random_data {
+    margin: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.randomtext {
+    width: 33%;
+    padding: 0 5px;
+}
+.randomtext input {
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    border: none;
+    background: none;
+    margin: 10px 0;
+    cursor: pointer;
+    outline: none;
+    color: #515151;
+}
+.randomtext input:hover {
+    color: #b1b1b1;
+}
+        /* navbar */
+        .nav {
+    position: absolute;
+    top: 0;
+    left: 4px;
+    color: #fff;
+}
+    .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: #2BC0E4;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #EAECC6, #2BC0E4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 18px 8px 8px;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: end;
+    color: #f6f6f6;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+#mobile-fly-menu span {
+    display: block;
+    position: absolute;
+    left: 12px;
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -ms-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+    height: 4px;
+    background: #fff;
+}
+#mobile-fly-menu {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    width: 50px;
+    height: 40px;
+    float: left;
+}
+#mobile-fly-menu span:nth-child(1) {
+    top: 7px;
+    width: 35px;
+}
+#mobile-fly-menu span:nth-child(2) {
+    top: 16px;
+    width: 27px;
+}
+#mobile-fly-menu span:nth-child(3) {
+    top: 24px;
+    width: 20px;
+}
+#scroll {
+    display: none;
+    position: fixed;
+    bottom: 20%;
+    right: 0;
+    background: #fff;
+    z-index: 99;
+    color: #777;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 12px 14px;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, .21);
+    border-radius: 0;
+}
+footer {
+    background: #202020;
+    color: #fff;
+}
+
+p.title {
+    font-size: 22px;
+    text-align: center;
+    color: #fff;
+    padding-top: 10px;
+}
+
+footer img {
+    max-width: 80%;
+    margin: 20px auto;
+    display: block;
+}
+.data{
+    width: 80%;
+    display: block;
+    margin: auto;
+}
+.data p{
+    letter-spacing: 0.3px;
+    line-height: 1.4;
+}
+.data li{
+    margin-left: 15px;
+    line-height: 1.5;
+}
+.data h2,.data h3,.data h4{
+    margin: 10px auto;
+}
+/* share */
+.share {
+display: block;
+text-align: right;
+margin-top: 5px;
+width: 90%;
+}
+.share a{
+font-size: 14px;
+}
+.resp-sharing-button__link,
+.resp-sharing-button__icon {
+display: inline-block
+}
+.resp-sharing-button__link {
+text-decoration: none;
+color: #fff;
+margin: 0.1em
+}
+.resp-sharing-button {
+border-radius: 5px;
+transition: 25ms ease-out;
+padding: 0.5em 0.75em;
+font-family: Helvetica Neue,Helvetica,Arial,sans-serif
+}
+.resp-sharing-button__icon svg {
+width: 1em;
+height: 1em;
+margin-right: 0.4em;
+vertical-align: top
+}
+.resp-sharing-button--small svg {
+margin: 0;
+vertical-align: middle
+}
+/* Non solid icons get a stroke */
+.resp-sharing-button__icon {
+stroke: #fff;
+fill: none
+}
+/* Solid icons get a fill */
+.resp-sharing-button__icon--solid,
+.resp-sharing-button__icon--solidcircle {
+fill: #fff;
+stroke: none
+}
+.resp-sharing-button--twitter {
+background-color: #55acee
+}
+.resp-sharing-button--twitter:hover {
+background-color: #2795e9
+}
+.resp-sharing-button--pinterest {
+background-color: #bd081c
+}
+.resp-sharing-button--pinterest:hover {
+background-color: #8c0615
+}
+.resp-sharing-button--facebook {
+background-color: #3b5998
+}
+.resp-sharing-button--facebook:hover {
+background-color: #2d4373
+}
+.resp-sharing-button--tumblr {
+background-color: #35465C
+}
+.resp-sharing-button--tumblr:hover {
+background-color: #222d3c
+}
+.resp-sharing-button--reddit {
+background-color: #5f99cf
+}
+.resp-sharing-button--reddit:hover {
+background-color: #3a80c1
+}
+.resp-sharing-button--google {
+background-color: #dd4b39
+}
+.resp-sharing-button--google:hover {
+background-color: #c23321
+}
+.resp-sharing-button--linkedin {
+background-color: #0077b5
+}
+.resp-sharing-button--linkedin:hover {
+background-color: #046293
+}
+.resp-sharing-button--email {
+background-color: #777
+}
+.resp-sharing-button--email:hover {
+background-color: #5e5e5e
+}
+.resp-sharing-button--xing {
+background-color: #1a7576
+}
+.resp-sharing-button--xing:hover {
+background-color: #114c4c
+}
+.resp-sharing-button--whatsapp {
+background-color: #25D366
+}
+.resp-sharing-button--whatsapp:hover {
+background-color: #1da851
+}
+.resp-sharing-button--hackernews {
+background-color: #FF6600
+}
+.resp-sharing-button--hackernews:hover, .resp-sharing-button--hackernews:focus {   background-color: #FB6200 }
+.resp-sharing-button--vk {
+background-color: #507299
+}
+.resp-sharing-button--vk:hover {
+background-color: #43648c
+}
+.resp-sharing-button--facebook {
+background-color: #3b5998;
+border-color: #3b5998;
+}
+.resp-sharing-button--facebook:hover,
+.resp-sharing-button--facebook:active {
+background-color: #2d4373;
+border-color: #2d4373;
+}
+.resp-sharing-button--twitter {
+background-color: #55acee;
+border-color: #55acee;
+}
+.resp-sharing-button--twitter:hover,
+.resp-sharing-button--twitter:active {
+background-color: #2795e9;
+border-color: #2795e9;
+}
+.resp-sharing-button--email {
+background-color: #777777;
+border-color: #777777;
+}
+.resp-sharing-button--email:hover,
+.resp-sharing-button--email:active {
+background-color: #5e5e5e;
+border-color: #5e5e5e;
+}
+.resp-sharing-button--pinterest {
+background-color: #bd081c;
+border-color: #bd081c;
+}
+.resp-sharing-button--pinterest:hover,
+.resp-sharing-button--pinterest:active {
+background-color: #8c0615;
+border-color: #8c0615;
+}
+.resp-sharing-button--whatsapp {
+background-color: #25D366;
+border-color: #25D366;
+}
+.resp-sharing-button--whatsapp:hover,
+.resp-sharing-button--whatsapp:active {
+background-color: #1DA851;
+border-color: #1DA851;
+}
+@media (max-width: 800px) {
+  
+  /* CSS */
+  .randomtext {
+    width: 50%;
+    padding: 0 5px;
+}
+.randomtext input {
+    font-size: 18px;
+    margin: 7px 0;
+}
+  
+}
+@media (max-width: 600px) {
+  
+  /* CSS */
+  .share {
+    width: 100%;
+    text-align: center;
+}
+  .float {
+    width: 50px;
+    height: 35px;
+    font-size: 16px;
+    top: 10%;
+}
+.my-float {
+    margin-top: 9px;
+}
+  .h, .h1 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+  div#result {
+    width: 100%;
+}
+.text-box {
+    position: fixed;
+    top: inherit;
+    width: 100%;
+    bottom: 0;
+    background: #B24592;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #F15F79, #B24592);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #F15F79, #B24592); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    left: 0;
+    right: 0;
+}
+textarea.fancytext {
+    width: 90%;
+    padding-top: 22px;
+    line-height: 1.4;
+    font-size: 16px;
+}
+.input-text input {
+    padding: 6px 0 13px 5px;
+    font-size: 16px;
+}
+span.name {
+    bottom: 2px;
+    left: 5px;
+    font-size: 11px;
+}
+header a {
+    font-size: 18px;
+}
+#random_data .input-text{
+  display: inline-block;
+}
+.randoms {
+    height: 170px;
+    overflow: auto;
+}
+div#random_data {
+    width: 100%;
+}
+.randomtext {
+    width: 100%;
+    padding: 0 5px;
+}
+.data{
+    width: 100%;
+}
+}
+
+</style>
+</head>
+<header>
+    <a href="/">Aesthetic Fonts</a>
+
+<!-- text-box -->
+    <div class="text-box">
+        <textarea type="text" class="fancytext" required="required" name="text" placeholder="✎ Type your text here" value=""></textarea>
+    </div>
+
+       <!-- mobile nav -->
+<div class="nav">
+    <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="/">Hakkımızda</a>
+    <a href="/">Gizlilik Politikası</a>
+    </div>
+  
+    <span id="mobile-fly-menu" onclick="openNav()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    </div>
+</header>
+<body>
+
+    <button id="scroll" title="Go to top">⇧</button>
+
+    <div class="mains-con">
+        <div id="result">
+            <h2>Recently Used</h2>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="(っ◔◡◔)っ ♥ aesthetic fonts ♥" id="copy_40"></p><span class="name">Kirby Hug Font</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="♧😲  Δє𝐬ｔ𝓱ᵉŤ𝒾ᑕ ᶠⓄ几Ｔ𝓈  💥😺" id="copy_79"></p><span class="name">Text with emojis</span></div>
+            <h2>Most Commonly Used</h2>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="𝔞𝔢𝔰𝔱𝔥𝔢𝔱𝔦𝔠 𝔣𝔬𝔫𝔱𝔰" id="copy_0"></p><span class="name">OLD ENGLISH</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="𝖆𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈 𝖋𝖔𝖓𝖙𝖘" id="copy_1"></p><span class="name">Medieval text</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="𝓪𝓮𝓼𝓽𝓱𝓮𝓽𝓲𝓬 𝓯𝓸𝓷𝓽𝓼" id="copy_3"></p><span class="name">Script bold text</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="𝒶𝑒𝓈𝓉𝒽𝑒𝓉𝒾𝒸 𝒻𝑜𝓃𝓉𝓈" id="copy_4"></p><span class="name">Script Source</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="𝕒𝕖𝕤𝕥𝕙𝕖𝕥𝕚𝕔 𝕗𝕠𝕟𝕥𝕤" id="copy_5"></p><span class="name">Double strikethrough text</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="🅰🅴🆂🆃🅷🅴🆃🅸🅲 🅵🅾🅽🆃🆂" id="copy_15"></p><span class="name">Black Square Text</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="🄰🄴🅂🅃🄷🄴🅃🄸🄲 🄵🄾🄽🅃🅂" id="copy_12"></p><span class="name">Square Text</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="ⓐⓔⓢⓣⓗⓔⓣⓘⓒ ⓕⓞⓝⓣⓢ" id="copy_18"></p><span class="name">Luni Tools Text Bubble Style</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="ᴀᴇꜱᴛʜᴇᴛɪᴄ ꜰᴏɴᴛꜱ" id="copy_8"></p><span class="name">Sans-Serif Text</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="sʇuoɟ ɔıʇǝɥʇsǝɐ" id="copy_9"></p><span class="name">Text face down</span></div>
+            <h2>Decorative Fonts</h2>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="🍭☜  𝕒ⒺŞ𝓣Ⓗєţι𝒸 𝔣𝓸η𝔱Ş  💀🍭" id="copy_2"></p><span class="name">Text decorated with emoji</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="¸,ø¤º°`°º¤ø,¸   🎀  𝒶𝑒𝓈𝓉𝒽𝑒𝓉𝒾𝒸 𝒻🏵𝓃𝓉𝓈  🎀   ¸,ø¤º°`°º¤ø,¸" id="copy_7"></p><span class="name">Full Crazy Font</span></div>
+            <h2>Small Fonts</h2>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="ₐₑₛₜₕₑₜᵢc fₒₙₜₛ" id="copy_16"></p><span class="name">Elegant Small Font</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="ᵃᵉˢᵗʰᵉᵗⁱᶜ ᶠᵒⁿᵗˢ" id="copy_17"></p><span class="name">Small Text</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="ａｅｓｔｈｅｔｉｃ ｆｏｎｔｓ" id="copy_6"></p><span class="name">Wide Font</span></div>
+            <h2>Regular Fonts</h2>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="a⃣   e⃣   s⃣   t⃣   h⃣   e⃣   t⃣   i⃣   c⃣    f⃣   o⃣   n⃣   t⃣   s⃣" id="copy_10"></p><span class="name">Wide Square Text Font</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="a⃞    e⃞    s⃞    t⃞    h⃞    e⃞    t⃞    i⃞    c⃞     f⃞    o⃞    n⃞    t⃞    s⃞" id="copy_11"></p><span class="name">Wide Square Text Font</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="ꙅƚᴎoᎸ ɔiƚɘʜƚꙅɘɒ" id="copy_13"></p><span class="name">Side Flip Fountain</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="คєรՇђєՇเς Ŧ๏ภՇร" id="copy_19"></p><span class="name">Scribble fancy text</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="αҽʂƚԋҽƚιƈ ϝσɳƚʂ" id="copy_20"></p><span class="name">Wavy Font</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="ǟɛֆȶɦɛȶɨƈ ʄօռȶֆ" id="copy_21"></p><span class="name">Scribble Text</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="ᏗᏋᏕᏖᏂᏋᏖᎥፈ ᎦᎧᏁᏖᏕ" id="copy_22"></p><span class="name">Scribble fancy text</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="ąɛʂɬɧɛɬıƈ ʄơŋɬʂ" id="copy_23"></p><span class="name">Scribble style text</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="คēŞthēti¢ f໐ຖtŞ" id="copy_24"></p><span class="name">Small scribble text</span></div>
+            <h2>Error (ZALGO)</h2>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="a̸͙̘̹͈̟̯̞͆̍̑̃̂̂̈́̕͜é̵͇̹̠̠̖̰̯̣̈́̋͜s̴̛͇̥̠̔ẗ̶̡̫͈̺͙̍̈̓̾̆͘̕h̸̯̱̰͚̹͖͖͕̉̈͋̂̆̕͜͝ͅę̴̧̺͓̹͇̺͖̪̣͗̏͠ṫ̶̼͕͇͈͓́̂͒͜i̷͓̯̻̩͉̩̠̗̍̎͊̀̐́͂̒̄c̵̗̜̠͕͚̥͈̜̥̀̍̽̈́̂̄͊̀́͜͝ ̵̭͓̹̌̑̃́̄̾f̸̛̼̟̳̻͚͒̍͐̆̽̆͝͝o̸͚̤̹͕͙̟̯̯̜͙͌͗͆͑̓̒̇̓ǹ̵͈̙t̴͉̰̼̥͍̺̹̖̊̈́̃̒s̷̛̙̗͚͈̙͎̟̪̜͌͛͜" id="copy_14"></p><span class="name">Write Text to Zalgo</span></div>
+            <h2>For Work</h2>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="𝐚𝐞𝐬𝐭𝐡𝐞𝐭𝐢𝐜 𝐟𝐨𝐧𝐭𝐬" id="copy_25"></p><span class="name">Mono Space Bold Font</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="𝗮𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰 𝗳𝗼𝗻𝘁𝘀" id="copy_26"></p><span class="name">Bold Font</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="𝘢𝘦𝘴𝘵𝘩𝘦𝘵𝘪𝘤 𝘧𝘰𝘯𝘵𝘴" id="copy_27"></p><span class="name">Italic Font</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="𝙖𝙚𝙨𝙩𝙝𝙚𝙩𝙞𝙘 𝙛𝙤𝙣𝙩𝙨" id="copy_28"></p><span class="name">Bold Italic Font</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="𝚊𝚎𝚜𝚝𝚑𝚎𝚝𝚒𝚌 𝚏𝚘𝚗𝚝𝚜" id="copy_29"></p><span class="name">Monospaced Text</span></div>
+            <h2>Strange Text</h2>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="ΛΣƧƬΉΣƬIᄃ FӨПƬƧ" id="copy_30"></p><span class="name">Top Angle Fonts</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="αєѕтнєтι¢ ƒσηтѕ" id="copy_31"></p><span class="name">Greek Font</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="卂乇丂ㄒ卄乇ㄒ丨匚 千ㄖ几ㄒ丂" id="copy_34"></p><span class="name">Asian Style 1</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="ﾑ乇丂ｲん乇ｲﾉᄃ ｷの刀ｲ丂" id="copy_35"></p><span class="name">Asian Style 2</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="【a】【e】【s】【t】【h】【e】【t】【i】【c】 【f】【o】【n】【t】【s】" id="copy_36"></p><span class="name">Chunky Block Border Font</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="『a』『e』『s』『t』『h』『e』『t』『i』『c』 『f』『o』『n』『t』『s』" id="copy_37"></p><span class="name">Angel Border Font Style</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="≋a≋e≋s≋t≋h≋e≋t≋i≋c≋ ≋f≋o≋n≋t≋s≋" id="copy_38"></p><span class="name">Wavy Joiner Style Font</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="░a░e░s░t░h░e░t░i░c░ ░f░o░n░t░s░" id="copy_39"></p><span class="name">Dotty Joiner Style Font</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="ａｅｓｔｈｅｔｉｃ　ｆｏｎｔｓ　ちんイ" id="copy_41"></p><span class="name">Vapowave font style</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="æｓｔｈｅｔｉｃ░ｆｏｎｔｓ　（ちんイ）" id="copy_42"></p><span class="name">Vapowave 2 Source</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="【﻿ａｅｓｔｈｅｔｉｃ　ｆｏｎｔｓ】" id="copy_43"></p><span class="name">Text frame between square brackets</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="˜”*°•.˜”*°• aesthetic fonts •°*”˜.•°*”˜" id="copy_44"></p><span class="name">Small Sparkles Font</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="[̲̅a][̲̅e][̲̅s][̲̅t][̲̅h][̲̅e][̲̅t][̲̅i][̲̅c] [̲̅f][̲̅o][̲̅n][̲̅t][̲̅s]" id="copy_45"></p><span class="name">Strange Box Font</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="a҉e҉s҉t҉h҉e҉t҉i҉c҉ ҉f҉o҉n҉t҉s҉" id="copy_46"></p><span class="name">Firework Fountain</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="ąҽʂէհҽէìç ƒօղէʂ" id="copy_47"></p><span class="name">Font doubled</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="ᗩEᔕTᕼETIᑕ ᖴOᑎTᔕ" id="copy_48"></p><span class="name">Neon Font</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="ᗩᘿSᖶᕼᘿᖶᓰᑢ ᖴᓍᘉᖶS" id="copy_49"></p><span class="name">Future Alien Source</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="a̶e̶s̶t̶h̶e̶t̶i̶c̶ ̶f̶o̶n̶t̶s̶" id="copy_50"></p><span class="name">strikeout font</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="a̴e̴s̴t̴h̴e̴t̴i̴c̴ ̴f̴o̴n̴t̴s̴" id="copy_51"></p><span class="name">Tild strikeThrough Font</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="a̷e̷s̷t̷h̷e̷t̷i̷c̷ ̷f̷o̷n̷t̷s̷" id="copy_52"></p><span class="name">Definitive source</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="a̲e̲s̲t̲h̲e̲t̲i̲c̲ ̲f̲o̲n̲t̲s̲" id="copy_53"></p><span class="name">Underline Font</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="a̳e̳s̳t̳h̳e̳t̳i̳c̳ ̳f̳o̳n̳t̳s̳" id="copy_54"></p><span class="name">Elegant Double Underline Font</span></div>
+            <h2>Decorative Text with Symbols</h2>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="a̾e̾s̾t̾h̾e̾t̾i̾c̾ ̾f̾o̾n̾t̾s̾" id="copy_55"></p><span class="name">Scented Fountain</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="a♥e♥s♥t♥h♥e♥t♥i♥c♥ ♥f♥o♥n♥t♥s" id="copy_56"></p>  <span class="name">Yazı Tipleri Arasında Kalpler</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="a͎e͎s͎t͎h͎e͎t͎i͎c͎ ͎f͎o͎n͎t͎s͎" id="copy_57"></p><span class="name">Arrow Font Style</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="a͓̽e͓̽s͓̽t͓̽h͓̽e͓̽t͓̽i͓̽c͓̽ ͓̽f͓̽o͓̽n͓̽t͓̽s͓̽" id="copy_58"></p><span class="name">Cross Font on Top</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="Wingdings: ♋︎♏︎⬧︎⧫︎♒︎♏︎⧫︎♓︎♍︎◻︎♐︎□︎■︎⧫︎⬧︎" id="copy_59"></p><span class="name">Wingdings Font</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="✷✳  🎀  𝒶𝑒𝓈𝓉𝒽𝑒𝓉𝒾𝒸 𝒻❁𝓃𝓉𝓈  🎀  ✳✷" id="copy_60"></p><span class="name">Beautiful Font</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="🍩  🎀  𝒶𝑒𝓈𝓉𝒽𝑒𝓉𝒾𝒸 𝒻❁𝓃𝓉𝓈  🎀  🍩" id="copy_61"></p><span class="name">wonderful fonts</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="🌠:  🎀  𝒶𝑒𝓈𝓉𝒽𝑒𝓉𝒾𝒸 𝒻🍩𝓃𝓉𝓈  🎀  :🌠" id="copy_62"></p><span class="name">cool lyrics</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="▁ ▂ ▄ ▅ ▆ ▇ █   🎀  𝒶𝑒𝓈𝓉𝒽𝑒𝓉𝒾𝒸 𝒻🍑𝓃𝓉𝓈  🎀   █ ▇ ▆ ▅ ▄ ▂ ▁" id="copy_63"></p><span class="name">Cool font</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="(¯`·.¸¸.-> °º   🎀  𝒶𝑒𝓈𝓉𝒽𝑒𝓉𝒾𝒸 𝒻🍪𝓃𝓉𝓈  🎀   º° >-.¸¸.·`¯(" id="copy_64"></p><span class="name">Cool Fancy Font</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="⛵✌  𝔞ⒺsⓉʰＥ丅𝓘𝒸 ｆ๏Ｎｔ𝓈  🐺☟" id="copy_65"></p><span class="name">fancy script font</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="🐲😲  𝓪Ẹs𝓉𝒽єŤⒾ𝐂 𝓕ᗝ𝔫ＴＳ  😲👹" id="copy_66"></p><span class="name">Cool Fancy Font</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="☮🐜  ⓐ𝔢รⓣⒽ𝓔тⓘς 𝓕ｏŇţ𝓢  ☜☝" id="copy_67"></p><span class="name">Different fonts</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="¤ (¯´☆✭.¸_)¤ 𝔞έ𝔰𝕋Ⓗ乇ţᎥᑕ 𝒻𝕆ᑎ𝓉𝐬 ¤(_¸.✭☆´¯) ¤" id="copy_68"></p><span class="name">Cool and stylish text</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="🐙♔  𝔞乇ＳţħⒺ𝐭𝔦𝒸 𝐅𝓸ⓝ丅ร  ♚🐊" id="copy_69"></p><span class="name">Cool and stylish text</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="💀🐯  α𝔼Ŝᵗ𝕙乇ｔᎥČ Ƒ𝐨ⓝ𝕥Ŝ  ★✌" id="copy_70"></p><span class="name">Cool Fonts Copy & Paste</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="👽🎯  α𝐄ＳⓣђẸтĮ𝒸 𝓕σⓃＴ丂  ♥😂" id="copy_71"></p><span class="name">Cool Fonts Copy & Paste</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="🍭💋  α𝕖ѕⓉℍ𝔢ｔις 𝒇𝐎ηtѕ  😾♔" id="copy_72"></p><span class="name">Cool Fonts Copy & Paste</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="▌│█║▌║▌║ 𝓐𝔢ᔕ𝕋нє𝓉丨Ć ᶠｏᑎᵗŜ ║▌║▌║█│▌" id="copy_73"></p><span class="name">Stylish font copy & Paste</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="☢🎀  ａ𝓔ร丅ℍє𝐭𝐢Ｃ 𝐅ⓄＮ𝓽𝓈  😳✎" id="copy_74"></p><span class="name">Stylish font copy & Paste</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="🍓🎀  α𝓔ŜⓉĦέＴ𝓲Ｃ 𝔣ØⓃＴＳ  🐊🍟" id="copy_75"></p><span class="name">Elegant Font</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="💗💘  ค𝑒丂𝐓Ｈ𝐄Ⓣⓘᑕ Ŧ𝓞ภ𝕥𝐬  ♦💔" id="copy_76"></p><span class="name">Elegant Font</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="♥♥  𝐚𝕖丂ⓣĦ𝑒ţ𝐢𝓒 ғⓞ𝓝тｓ  ♕💋" id="copy_77"></p><span class="name">fancy letters</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="—(••÷[ ａєＳᵗＨєｔι𝓬 ƒᗝŇтˢ ]÷••)—" id="copy_78"></p><span class="name">Text with emoji</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="¸,ø¤º°`°º¤ø,¸ ⓐ𝕖ⓢ𝓽ħｅтＩᑕ 𝒻𝔬Ň𝓉ร ¸,ø¤º°`°º¤ø,¸" id="copy_80"></p><span class="name">Text with emoji</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="╰☆☆ ᗩᵉ𝐬ᵗħє𝓽Ɨς ᶠỖŇ𝓉ｓ ☆☆╮" id="copy_81"></p><span class="name">Text with symbols</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="♩♢  卂ⓔѕтｈєt𝒾c 千ⓄŇ𝓉ᔕ  👍💙" id="copy_82"></p><span class="name">Text with symbols</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="☝🏆  𝕒𝒆şţℍｅⓣ𝐢ς 𝐅𝕆𝓷тѕ  ☯★" id="copy_83"></p><span class="name">Copy and paste stylish fonts</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="🍓☯  α𝒆şţ𝐡𝔢𝕥Ⓘ𝓬 𝓕𝕠ηⓉ丂  🍬😎" id="copy_84"></p><span class="name">Copy and paste stylish fonts</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="•´¯`•» 𝔞𝓔𝐬𝕥ｈᗴ𝓉Ⓘ𝐜 ғσＮŤⓈ «•´¯`•" id="copy_85"></p><span class="name">Copy and paste stylish fonts</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="🐙 ⋆ 🐟  🎀  𝒶𝑒𝓈𝓉𝒽𝑒𝓉𝒾𝒸 𝒻🌸𝓃𝓉𝓈  🎀  🐟 ⋆ 🐙" id="copy_86"></p><span class="name">Interesting text</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="🍓 ⋆ 🍡  🎀  𝒶𝑒𝓈𝓉𝒽𝑒𝓉𝒾𝒸 𝒻💞𝓃𝓉𝓈  🎀  🍡 ⋆ 🍓" id="copy_87"></p><span class="name">Interesting text</span></div>
+            <div class="input-text"><p onclick="copyit(this)"><input type="text" value="･ﾟ  🎀  𝒶𝑒𝓈𝓉𝒽𝑒𝓉𝒾𝒸 𝒻😍𝓃𝓉𝓈  🎀  ﾟ･" id="copy_88"></p><span class="name">fancy letters</span></div>
+            </div>
+        <center>
+        <button class="btn btn-primary loadmore">Load more fonts</button>
+        </center>
+        </div>
+</body>
+
+<footer>
+    <p class="title">Aesthetic Fonts Generator ✨ | #1 Stylish Text & Cool Fonts Copy Tool</p>
+</footer>
+
+<script>
+    $(window).scroll(function(){ 
+  if ($(this).scrollTop() > 100) { 
+      $('#scroll').fadeIn(); 
+  } else { 
+      $('#scroll').fadeOut(); 
+  } 
+}); 
+$('#scroll').click(function(){ 
+  $("html, body").animate({ scrollTop: 0 }, 600); 
+  return false; 
+}); 
+
+</script>
+
+<script>
+    // mobile nav
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+    </script>
+
+<script>
+    function copyit(el) 
+  {
+      // Copy textarea, pre, div, etc.
+    if (document.body.createTextRange) {
+          // IE 
+          var textRange = document.body.createTextRange();
+          textRange.moveToElementText(el);
+          textRange.selecopyit();
+          textRange.execCommand("Copy");   
+      //tooltip(el, "Copied!");  
+      }else if (window.getSelection && document.createRange) {
+          // non-IE
+          var editable = el.contentEditable; // Record contentEditable status of element
+          var readOnly = el.readOnly; // Record readOnly status of element
+           el.contentEditable = true; // iOS will only select text on non-form elements if contentEditable = true;
+           el.readOnly = true; // iOS will not select in a read only form element // Version 1.2c - Changed from false to true; Prevents keyboard from appearing when copying from textarea
+          var range = document.createRange();
+          range.selectNodeContents(el);
+          var sel = window.getSelection();
+          sel.removeAllRanges();
+          sel.addRange(range); // Does not work for Firefox if a textarea or input
+          if (el.nodeName == "TEXTAREA" || el.nodeName == "INPUT") 
+            el.selecopyit(); // Firefox will only select a form element with selecopyit()
+          //if (el.setSelectionRange && navigator.userAgent.match(/ipad|ipod|iphone/i)) // Version 1.2c - iOS 12 might be defaulting to desktop mode so removed
+          if (el.setSelectionRange) // Version 1.2c - iOS 12 might be defaulting to desktop mode and no longer has iphone in user agent
+            el.setSelectionRange(0, 999999); // iOS only selects "form" elements with SelectionRange
+          el.contentEditable = editable; // Restore previous contentEditable status
+          el.readOnly = readOnly; // Restore previous readOnly status 
+        if (document.queryCommandSupported("copy"))
+        {
+        var successful = document.execCommand('copy');  
+          if (successful)  $('body').append('<p class="copied"><span class="copybtn">copied ✔</span></p>'), setTimeout(function () { $('.copied').remove(); }, 1000)
+          else $('body').append('<p class="copied"></p>'), setTimeout(function () { $('.copied').remove(); }, 1000)
+      }
+      else
+      {
+        if (!navigator.userAgent.match(/ipad|ipod|iphone|android|silk/i))
+        $('body').append('<p class="copied"></p>'), setTimeout(function () { $('.copied').remove(); }, 1000)	
+      }
+      }
+  }
+  </script>
+  
+<script>
+    $(function() { 
+      
+    $(".fancytext").keyup(function() { 
+       //$(".fancytext").val($(this).val());
+        var user_txt = $(".fancytext").val();
+        if(user_txt.trim()!='') { 
+        }else{
+            user_txt = "aesthetic fonts";
+        }
+        generateFancy(user_txt);
+     });
+    var ct = 89;
+    function generateFancy(txt) {
+      var fancyText = '';
+         var result = forward(txt);
+             var finalRes =  result.split('\n\n');
+             var sn=1;
+            $.each(finalRes,function(inx, vl) { 
+                $("#copy_"+inx).val(vl);
+              sn++;
+            });
+            
+            
+            for(k=89; k<=ct; k++) {
+                //console.log(k);
+                $("#copy_"+k).val(crazyWithFlourishOrSymbols(txt));
+            }
+    }
+     
+     $(".loadmore").click(function(){
+       $(this).html('Loading...');
+        var text = $.trim($(".fancytext").val());
+       if(text=='') {
+         text = 'aesthetic fonts';
+       } 
+       var that = $(this);
+       var intvl = setInterval(function(){  that.html('Load More');clearInterval(intvl); }, 1000);
+       for(var i=1;i<=10;i++){
+        fancyText  =  '<div class="input-text"><p onclick="copyit(this)"><input type="text" value="'+crazyWithFlourishOrSymbols(text)+'" id="copy_'+ct+'"></p><span class="name">Random Decorated Fonts</span></div></div>';
+          ct++;
+        $("#result").append(fancyText);
+        }
+     });
+    
+    });
+</script>
+
+<script>
+    var _0x5258=["\x76\x61\x6C","\x2E\x66\x61\x6E\x63\x79\x74\x65\x78\x74","\x74\x72\x69\x6D","","\x79\x61\x7A\x69\x20\x73\x74\x69\x6C\x6C\x65\x72\x69","\x72\x61\x6E\x64\x6F\x6D","\x66\x6C\x6F\x6F\x72","\x63\x6C\x69\x63\x6B","\x2E\x72\x65\x6C\x6F\x61\x64\x5F\x62\x74\x6E","\x6C\x65\x6E\x67\x74\x68","\x68\x61\x73\x5F\x73\x75\x62","\x61\x6C\x6C\x56\x61\x72\x73","\x3C\x64\x69\x76\x20\x63\x6C\x61\x73\x73\x3D\x22\x72\x61\x6E\x64\x6F\x6D\x74\x65\x78\x74\x22\x20\x6F\x6E\x63\x6C\x69\x63\x6B\x3D\x22\x63\x6F\x70\x79\x69\x74\x28\x74\x68\x69\x73\x29\x22\x3E\x3C\x69\x6E\x70\x75\x74\x20\x74\x79\x70\x65\x3D\x22\x74\x65\x78\x74\x22\x20\x76\x61\x6C\x75\x65\x3D\x22","\x22\x20\x3E\x3C\x2F\x64\x69\x76\x3E","\x22\x3E\x3C\x2F\x64\x69\x76\x3E","\x68\x74\x6D\x6C","\x23\x72\x61\x6E\x64\x6F\x6D\x5F\x64\x61\x74\x61","\x72\x65\x61\x64\x79"];$(document)[_0x5258[17]](function(){function _0xd245x1(){var _0xd245x2=$(_0x5258[1])[_0x5258[0]]();if(_0xd245x2[_0x5258[2]]()!= _0x5258[3]){}else {_0xd245x2= _0x5258[4]};return _0xd245x2}function _0xd245x3(_0xd245x4,_0xd245x5){return Math[_0x5258[6]](Math[_0x5258[5]]()* (_0xd245x5- _0xd245x4+ 1)+ _0xd245x4)}var _0xd245x6=[oldEnglishCharMap,medievalCharMap,cursiveCharMap,doubleStruckCharMap,wideTextCharMap,squaresCharMap,invertedSquaresCharMap,subscriptCharMap,squiggleCharMap,squiggle2CharMap,squiggle3CharMap,squiggle4CharMap,squiggle5CharMap,squiggle6CharMap,boldCharMap,boldSansCharMap,italicCharMap,boldItalicCharMap,monospaceCharMap,upperAnglesCharMap,greekCharMap,symbolsCharMap,currencyCharMap,asianStyleCharMap,asianStyle2CharMap,bentTextCharMap,neonCharMap,futureAlienCharMap];var _0xd245x7=[applyCharMap,fullCrazy,scriptify,cuteText,thickBlockFramed,diametricAngleFrame,wavyJoiner,dottyJoiner,kirbyHug,vaporwaveText,littleSparkles,weirdBox,firework,strikeThrough,tildeStrikeThrough,slashThrough,underline,doubleUnderline,stinky,heartsBetween,arrowBelow,crossAboveBelow,wingdings,crazyWithFlourishOrSymbols,applyCharMap,applyCharMap,applyCharMap,applyCharMap,applyCharMap,applyCharMap,applyCharMap,applyCharMap,applyCharMap,applyCharMap];var _0xd245x8={0:{has_sub:true,allVars:_0xd245x6},1:{has_sub:false},2:{has_sub:false},3:{has_sub:false},4:{has_sub:false},5:{has_sub:false},6:{has_sub:false},7:{has_sub:false},8:{has_sub:false},9:{has_sub:false},10:{has_sub:false},11:{has_sub:false},12:{has_sub:false},13:{has_sub:false},14:{has_sub:false},15:{has_sub:false},16:{has_sub:false},17:{has_sub:false},18:{has_sub:false},19:{has_sub:false},20:{has_sub:false},21:{has_sub:false},22:{has_sub:false},23:{has_sub:false},24:{has_sub:true,allVars:_0xd245x6},25:{has_sub:true,allVars:_0xd245x6},26:{has_sub:true,allVars:_0xd245x6},27:{has_sub:true,allVars:_0xd245x6},28:{has_sub:true,allVars:_0xd245x6},29:{has_sub:true,allVars:_0xd245x6},30:{has_sub:true,allVars:_0xd245x6},31:{has_sub:true,allVars:_0xd245x6},32:{has_sub:true,allVars:_0xd245x6},33:{has_sub:true,allVars:_0xd245x6}};$(_0x5258[8])[_0x5258[7]](function(){_0xd245x9()});function _0xd245x9(){var _0xd245xa=(_0xd245x7[_0x5258[9]]);var _0xd245xb=_0x5258[3];for(i= 0;i< 6;i++){let _0xd245xc=_0xd245x3(0,(_0xd245xa- 1));if(_0xd245x8[_0xd245xc][_0x5258[10]]){var _0xd245xd=_0xd245x3(0,(_0xd245x8[_0xd245xc][_0x5258[11]][_0x5258[9]])- 1);_0xd245xb+= _0x5258[12]+ _0xd245x7[_0xd245xc](_0xd245x8[_0xd245xc][_0x5258[11]][_0xd245xd],_0xd245x1())+ _0x5258[13]}else {_0xd245xb+= _0x5258[12]+ _0xd245x7[_0xd245xc](_0xd245x1())+ _0x5258[14]}};$(_0x5258[16])[_0x5258[15]](_0xd245xb)}setInterval(function(){_0xd245x9()},4000)})
+</script>
+</html>
